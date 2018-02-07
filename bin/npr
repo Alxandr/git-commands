@@ -1,3 +1,5 @@
 #!/bin/bash
 
-npm run "${1:-start}"
+cmd="${1:-start}"
+shift
+npm run "$cmd" -- $*
