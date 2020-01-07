@@ -6,7 +6,7 @@ if [[ -n $(git status -s) ]]; then
 fi
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$BRANCH" != "master" ]]; then
+if [[ "$BRANCH" == "master" ]]; then
   git pull
 else
   git fetch origin master:master
