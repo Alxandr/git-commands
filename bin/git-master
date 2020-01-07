@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ -n $(git status -s) ]]; then
+  echo "Working dir dirty"
+  exit 1
+fi
+
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 if [[ "$BRANCH" != "master" ]]; then
   git pull
